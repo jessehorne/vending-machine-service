@@ -11,9 +11,17 @@ class Coin(base):
     id = Column(Integer, primary_key=True)
 
     name = Column(String)
+    worth = Column(Float)
 
     def __init__(self, name):
         self.name = name
 
+        if self.name == "nickle":
+            self.worth = 0.05
+        elif self.name == "dime":
+            self.worth = 0.1
+        elif self.name == "quarter":
+            self.worth = 0.25
+
     def __repr__(self):
-        return json.dumps({"id": self.id, "name": self.name})
+        return json.dumps({"name": self.name, "worth": self.worth})
