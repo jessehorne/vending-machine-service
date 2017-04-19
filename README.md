@@ -1,7 +1,7 @@
 vending-machine-service
 =======================
 
-A API written in Python that uses Flask, and is an implementation of the vending machine specified [here](https://github.com/PillarTechnology/kata-vending-machine). This is the minimum acceptable implementation of this project, so please see the [TODO](##TODO) section at the bottom of this README.
+An API written in Python that uses Flask, and is an implementation of the vending machine specified [here](https://github.com/PillarTechnology/kata-vending-machine). This is the minimum acceptable implementation of this project, so please see the [TODO](##TODO) section at the bottom of this README.
 
 ---
 
