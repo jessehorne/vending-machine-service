@@ -5,7 +5,7 @@ from util import get_session, response
 from models.coin import Coin
 
 
-coins = ["nickle", "dime", "quarter"]
+coins = ["nickel", "dime", "quarter"]
 
 
 def get_coins():

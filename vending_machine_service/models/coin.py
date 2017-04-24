@@ -16,7 +16,7 @@ class Coin(base):
     def __init__(self, name):
         self.name = name
 
-        if self.name == "nickle":
+        if self.name == "nickel":
             self.worth = 0.05
         elif self.name == "dime":
             self.worth = 0.1

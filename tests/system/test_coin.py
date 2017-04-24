@@ -6,7 +6,7 @@ ADDRESS = "http://localhost:5000"
 
 def test_insert_coins__valid_coins():
     # test valid coins
-    coins = ["nickle", "dime", "quarter"]
+    coins = ["nickel", "dime", "quarter"]
 
     for coin in coins:
         r = requests.post(ADDRESS + "/coin/{}".format(coin))
@@ -24,7 +24,7 @@ def test_display__no_coins():
 
 
 def test_display__existing_coin():
-    coins = ["nickle", "dime", "quarter"]
+    coins = ["nickel", "dime", "quarter"]
 
     for coin in coins:
         r = requests.post(ADDRESS + "/coin/{}".format(coin))
