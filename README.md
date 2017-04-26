@@ -42,6 +42,7 @@ python vending_machine_service/vending_machine_service.py
 ---
 
 ## Run tests
+For system tests to pass, the service itself must be running!
 ```
 pytest test/
 ```

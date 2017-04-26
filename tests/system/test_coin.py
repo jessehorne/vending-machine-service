@@ -17,6 +17,16 @@ def test_insert_coins__valid_coins():
     r = requests.delete(ADDRESS + "/coin")
 
 
+def test_insert_coins__invalid_coin():
+    invalid_coins = ["penny", "super coin", "mega super coin"]
+
+    for invalid_coin in invalid_coins:
+        r = requests.post(ADDRESS + "/coin/{}".format(invalid_coin))
+
+        if not r.status_code == 400:
+            assert False
+
+
 def test_display__no_coins():
     r = requests.get(ADDRESS + "/coin")
 
