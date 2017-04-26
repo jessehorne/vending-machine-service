@@ -48,6 +48,6 @@ pytest test/
 
 ---
 
-## TODO
+## Endpoints
 
 more coming soon...
