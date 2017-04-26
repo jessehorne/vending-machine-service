@@ -32,7 +32,7 @@ def insert_coin(name):
             return response(status=200, data={})
     else:
         data = {
-            "message": "That coin isn't accepted."
+            "coin": name
         }
 
         return response(status=400, data=data)
