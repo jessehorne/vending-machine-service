@@ -30,7 +30,7 @@ def test_insert_coins__invalid_coin():
 def test_display__no_coins():
     r = requests.get(ADDRESS + "/coin")
 
-    assert "INSERT COINS" in r.text
+    assert r.json()["change"] == 0.0
 
 
 def test_display__existing_coin():

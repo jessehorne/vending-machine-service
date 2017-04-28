@@ -8,38 +8,27 @@ from models.coin import Coin
 coins = ["nickel", "dime", "quarter"]
 
 
-def get_coins():
-    with get_session() as session:
-        all_coins = session.query(Coin).all()
+def get_coin_amount(session):
+    current_coins = session.query(Coin).all()
+    current_count = 0.0
 
-        if len(all_coins) == 0:
-            return response(status=200, data={"msg": "INSERT COINS"})
-        else:
-            json_coins = [json.loads(str(c)) for c in all_coins]
-            return response(status=200, data={"coins": json_coins})
+    for c in current_coins:
+        current_count += c.worth
 
-        return response(status=200, data=coin_data)
+    return current_count
 
 
-def insert_coin(name):
+def insert_coin(session, name):
     if name in coins:
-        with get_session() as session:
-            new_coin = Coin(name=name)
+        new_coin = Coin(name=name)
 
-            session.add(new_coin)
-            session.commit()
+        session.add(new_coin)
+        session.commit()
 
-            return response(status=200, data={})
-    else:
-        data = {
-            "coin": name
-        }
-
-        return response(status=400, data=data)
+        return True
 
 
-def delete_all_coins():
-    with get_session() as session:
-        session.query(Coin).delete()
+def delete_all_coins(session):
+    session.query(Coin).delete()
 
-        return response(status=200, data={})
+    return True
