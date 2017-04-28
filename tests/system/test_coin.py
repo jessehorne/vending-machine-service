@@ -48,3 +48,5 @@ def test_display__existing_coin():
     assert "INSERT COINS" not in r.text
 
     r = requests.delete(ADDRESS + "/coin")
+
+    assert r.status_code == 200
